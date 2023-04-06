@@ -1,0 +1,32 @@
+
+Monoalphabetic subtitution encryption pseudo code:
+
+ARRAY orginial chars[26]
+ARRAY key chars[26]
+
+
+FUNCTION enctypt( plaintText )
+	
+	VAR encryptedtString = ""
+	
+	FOR i each index of plaintText
+	
+		FOR j = 0 to 26 
+			var s = chatAt(i)
+			IF(S equal to orginial[j])
+				encryptedtString = encryptedtString + key[j]
+				break
+			END IF
+		
+		END LOOP
+
+	END LOOP
+
+	RETURN encryptedtString
+
+END FUNCTION
+		
+	
+		
+
+	
