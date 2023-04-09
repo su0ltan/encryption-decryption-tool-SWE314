@@ -1,0 +1,9 @@
+1 - split the text into pairs
+2 - if there is one alone letter (number of letters are odd) we shall 
+	add Z letter into with the last letter
+3 - the pair shall not be same letter so replace by X letter.
+4 - if the pair in same row of matrix we shall replace every letter by
+	the right of each 
+5 - if the letters in same column we shall replace every letter by letter 	in bellow in matrix
+6 - if the pair is not in the same row and column we shall replace 
+	every letter the letter in opposite from right direction
