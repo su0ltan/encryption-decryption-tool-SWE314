@@ -1,0 +1,204 @@
+playfair instructions:
+1 - split the text into pairs
+2 - if there is one alone letter (number of letters are odd) we shall 
+	add Z letter into with the last letter
+3 - the pair shall not be same letter so replace by X letter.
+4 - if the pair in same row of matrix we shall replace every letter by
+	the right of each 
+5 - if the letters in same column we shall replace every letter by letter 	in bellow in matrix
+6 - if the pair is not in the same row and column we shall replace 
+	every letter the letter in opposite from right direction
+
+
+
+Playfair encryption/decryption algorithm:
+
+Generate the key and plaint text:
+Step 1: define key, plaint text variables
+Step 2: define 2D char array with size 5 x 5
+Step 3: take the key and plaint text from user then assign them to variables
+Step 4: remove duplicate letters from key variable
+step 5: convert key to char array
+step 6: define engLetters varieble contains the english letters
+Step 7: remove the letters of key that contains in engLetters variable
+step 8: compine the key variable (first) then engLetters in 2D char array 
+step 9: convert the plaint text into pairs
+step 10: if there is pair contains same letter change last to X letter
+step 11: if the number of letters in plaint text odd then add last z
+
+-Now we generated the matrix and converted plaint text into pairs.
+
+-Now we have to define function that search in matrix the position of letters:
+-the function shall receive the matrix and the pair (a and b)-
+
+step 1: define array y with size of 4 to store the row position and column position for both of pair letters.
+step 2: if one of letters are j make the letter equals to i letter
+step 3: now go through the whole matrix and search for element that equals a or b
+step 4: if you find the position of a variable store it in y array y[0] = row position and y[1] = column position , same thing with b variable store in y[2] for row and y[3] for column.
+- now we know y[0] and y[2] for row, y[1] and y[3] for column -
+step 5: now we have to check if the pair is in same row, if they in same row increase the column by 1 ( to get the next element from right )
+step 6: now we have to check if the pair is in same column, if they in same column increase the row by 1  (to get the next element from bottom)
+step 7 after generating the y array we have to check if y[4] equals to 5 then reduce it to 1 (cyrcling).
+then return the y.
+
+encryption steps:
+
+step 1: define x char array then add the plaint text into it
+step 2: define int array size of 4 that will store the postions of a and b
+step 3: call the function find by sending the x array and pair and receving positions of pair.
+step 4: if two variables in same row take the next elements from right to both
+step 5: if two variables in same column take the next elements from bottom to both
+step 6: if the pair is not in same column or row take the oppsite element from right or left.
+
+
+decryption steps:
+step 1: define char array then add the encrypted text into it
+step 2: define int array size of 4 that will store the postions of a and b
+step 3: call the function find by sending the x array and pair and receving positions of pair.
+step 4: if two variables in same row take the next elements from left to both
+step 5: if two variables in same column take the next elements from up to both
+step 6: if the pair is not in same column or row take the oppsite element from left or right.
+
+
+playfair pseudo code:
+
+INITIAL plaintText input from user
+INITIAL key input from user
+INITIAL ketMatrix char[][] array 
+
+FUNCTION removeDuplicate()
+INITIAL s, j, index set to zero , len set to length of plaintText
+INITIAL array c set to plaintText chars
+LOOP i from 0 to len
+	LOOP j from 0 to i
+		IF c[i] equals c[j] 
+			BREAK;
+	END LOOP
+
+	IF i equals to j 
+	c[index++] = c[i]
+END LOOP
+
+RETURN c
+END FUNCTION
+
+
+FUNCTION removeWhitespace(ch[])
+
+INITIAL c[] equals to key chars
+
+LOOP i from 0 to c length
+	LOOP j from 0 to ch length
+		
+		IF c[i] equals to ch[j]
+			c[i] = ' '
+		END IF
+	END LOOP
+END LOOP
+
+set key equals to new Strin of c
+
+remove spaces from key
+
+return key
+
+END FUNCTION
+
+FUNCTION splitIntoPair(plaintText)
+
+INITIAL s set to null
+
+LOOP i from 0 to plaintText length
+
+	s = s + plainText.charAt[i]
+	IF I < plaintText length - 1 then
+		IF plaintText.charAt[i] equals to plaintText.charAt[i+1]
+			s = s + "x"
+		END IF
+	END IF
+END LOOP
+
+IF length of s is odd then
+	s = s+ "z"
+END IF
+
+RETURN s 
+
+END FUNCTION
+		
+
+FUNCTION find(a , b , x[][])
+
+INITIAL Y[4]
+
+IF a equals to 'j'
+	a = 'i'
+END IF
+IF b equals to 'j'
+	b = 'i'
+END IF
+
+LOOP i from 0 to 4 
+	LOOP j from 0 to 4
+		IF x[i][j] equals to a 
+			y[0] equals i
+			y[1] equals j
+		ELSE IF x[i][j] equals to b
+			y[2] equals i
+			y[3] equals j
+		END IF
+	END LOOP
+END LOOP
+
+IF Y[0] equals to y[2]
+	INCEASE y[1] by 1
+	INCEASE y[3] by 1
+END IF
+IF Y[1] equals to y[3]
+	INCEASE y[0] by 1
+	INCEASE y[2] by 1
+END IF
+
+IF y[4] equals to 5
+	then set y[4] to 0
+END IF
+
+FUNCTION encrypt(plaintText , x[][])
+
+INITIAL ch[] equals to chars of plainText
+INITIAL a[4]
+
+LOOP i from 0 to plaintText length
+	
+	IF i < pt length - 1 then
+		a equals to calling the FUNCTION find(pt[i] , pt[i+1] , x)
+	END IF
+	
+	IF a[0] equals to a[2] then
+
+		ch[i] equals x[a[0]] [a[1]] 
+		ch[i + 1 ] equals x[a[0]] [a[3]]
+
+	ELSE IF a[1] equals to a[3] 
+
+		ch[i] = x[a[0]][a[1]]
+		ch[i + 1] = x[a[2]][a[1]]
+	ELSE
+
+		ch[i] = x[a[0]][a[3]];
+		ch[i + 1] = x[a[2]][a[1]];
+
+	END IF
+END LOOP
+
+plaintText = new String of ch
+
+RETURN PlaintText
+
+
+
+
+
+
+
+

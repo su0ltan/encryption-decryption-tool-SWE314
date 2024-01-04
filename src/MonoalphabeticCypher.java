@@ -13,10 +13,12 @@ class MonoalphabeticCypher {
             'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B' };
  
     // Function which returns encrypted string
-    public static String stringEncryption(String s)
+    public  String stringEncryption(String s)
     {
         // initializing an empty String
         String encryptedString = "";
+
+  
  
         // comparing each character of the string and
         // encoding each character using the indices
@@ -44,6 +46,42 @@ class MonoalphabeticCypher {
  
         // return encryptedString
         return encryptedString;
+    }
+    public String stringDecryption(String s)
+    {
+        // initializing an empty String
+
+        String decryptedString = "";
+ 
+       
+
+        // comparing each character of the string and
+        // encoding each character using the indices
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < 26; j++) {
+ 
+                // comparing the character and
+                // adding the corresponding char
+                // to the encryptedString
+            	
+                if (s.charAt(i) == codedChar[j])
+                {
+                	decryptedString += normalChar[j];
+                    break;
+                }
+ 
+                // if there are any special characters
+                // add them directly to the string
+                if (s.charAt(i) < 'A' || s.charAt(i) > 'Z')
+                {
+                	decryptedString += s.charAt(i);
+                    break;
+                }
+            }
+        }
+ 
+        // return encryptedString
+        return decryptedString;
     }
  
     // Function which returns descryptedString

@@ -1,0 +1,65 @@
+
+Monoalphabetic subtitution encryption pseudo code:
+
+ARRAY orginial chars[26]
+ARRAY key chars[26]
+
+
+FUNCTION encrypt( plaintText )
+	
+	VAR encryptedtString = null
+	
+	FOR i each index of plaintText
+	
+		FOR j = 0 to 26 
+			var s = plaintText.charAt(i)
+			IF(S equal to orginial[j])
+				encryptedtString = encryptedtString + key[j]
+				break
+			END IF
+		
+		END LOOP
+
+	END LOOP
+
+	RETURN encryptedtString
+
+END FUNCTION
+		
+
+
+Monoalphabetic subtitution Decryption pseudo code:
+
+ARRAY orginial chars[26]
+ARRAY key chars[26]
+
+
+FUNCTION decrypt( encryptedText )
+	
+	VAR decryptedtString = null
+	
+	FOR i each index of plaintText
+	
+		FOR j = 0 to 26 
+			var s = encryptedText.charAt(i)
+			IF(s equal to key[j])
+				decryptedtString = decryptedtString + originial[j]
+				break
+			END IF
+		
+		END LOOP
+
+	END LOOP
+
+	RETURN encryptedtString
+
+END FUNCTION
+		
+	
+		
+
+	
+	
+		
+
+	
