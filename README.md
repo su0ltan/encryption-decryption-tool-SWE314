@@ -13,3 +13,11 @@ This Java project provides educational implementations of various encryption and
 - KeyedTransposition (bit level): Implements the keyed transposition cipher, which rearranges the letters of the plaintext according to a secret key.
 
 - Vigenere: Implements the Vigenère cipher.
+
+
+## Project Structure
+- `src/`: Contains the source code for the CPU scheduler.
+- `doc/`: Documentation files for the project.
+
+
+
