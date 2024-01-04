@@ -16,7 +16,7 @@ This Java project provides educational implementations of various encryption and
 
 
 ## Project Structure
-- `src/`: Contains the source code for the CPU scheduler.
+- `src/`: Contains the source code for the Encryption tool.
 - `doc/`: Documentation files for the project.
 
 
