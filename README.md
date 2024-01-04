@@ -8,22 +8,19 @@ The Educational Encryption/Decryption Tool provides implementations of different
 
 ## Implemented Algorithms
 
-### 1. Main
-- Description: The main class serves as the entry point for the program, demonstrating the usage of different encryption and decryption algorithms.
-
-### 2. Monoalphabetic
+### 1. Monoalphabetic
 - Description: Implements the monoalphabetic substitution cipher, which replaces each letter in the plaintext with a corresponding letter from the cipher alphabet.
 
-### 3. Playfair
+### 2. Playfair
 - Description: Implements the Playfair cipher, a polygraphic substitution cipher that encrypts and decrypts pairs of letters.
 
-### 4. KeyedTransposition
+### 3. KeyedTransposition
 - Description: Implements the keyed transposition cipher, which rearranges the letters of the plaintext according to a secret key.
 
-### 5. KeyedTransposition (bit level)
+### 4. KeyedTransposition (bit level)
 - Description: Implements the keyed transposition cipher at the bit level, rearranging the letters of the plaintext according to a secret key.
 
-### 6. Vigenere
+### 5. Vigenere
 - Description: Implements the Vigenère cipher, a method of encrypting alphabetic text using a simple form of polyalphabetic substitution.
 
 ## Project Structure
@@ -36,5 +33,5 @@ Follow these steps to run the Educational Encryption/Decryption Tool on your loc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/encryption-decryption-tool.git
-   cd encryption-decryption-tool
+   git clone https://github.com/su0ltan/SWE314-project.git
+   cd SWE314-project
