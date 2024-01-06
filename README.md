@@ -33,5 +33,5 @@ Follow these steps to run the Educational Encryption/Decryption Tool on your loc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/su0ltan/SWE314-project.git
-   cd SWE314-project
+   git clone https://github.com/su0ltan/encryption-decryption-tool-SWE314.git
+   cd encryption-decryption-tool-SWE314
