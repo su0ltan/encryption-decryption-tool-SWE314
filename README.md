@@ -1,6 +1,9 @@
 # Educational Encryption/Decryption Tool
 
-This Java project, developed during a security course, serves as an educational tool for exploring various encryption and decryption algorithms. The project is standalone, requiring no external API for use.
+This Java project, developed during a security course(SWE-314), serves as an educational tool for exploring various encryption and decryption algorithms. The project is standalone, requiring no external API for use.
+
+<img width="500" alt="image" src="https://github.com/su0ltan/encryption-decryption-tool-SWE314/assets/53498277/5798c695-29ca-4a5f-a9e5-77a6f328c221">
+
 
 ## Overview
 
